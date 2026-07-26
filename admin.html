@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Admin Dashboard - Beeone Digital</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/localstorage-sync.js" defer></script>
+    <script src="js/admin-auth.js"></script>
+    <!-- Font Awesome for premium icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+      /* Premium admin dashboard styles */
+      .block-6 .media{ display:flex; flex-direction:column; align-items:center; justify-content:center; }
+      .block-6 .icon i {
+        display:inline-block;
+        width:110px;
+        height:110px;
+        border-radius:18px;
+        font-size:34px;
+        line-height:110px;
+        color:#fff !important;
+        text-align:center;
+        box-shadow:0 12px 28px rgba(0,0,0,0.18);
+        transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+        background:linear-gradient(135deg,#6a11cb,#2575fc);
+      }
+      .block-6 .icon i:hover{ transform:translateY(-8px) scale(1.02); box-shadow:0 24px 48px rgba(0,0,0,0.28); }
+      .block-6 .media-body{ margin-top:12px; }
+      .block-6 .media-body .heading{ font-size:16px; color:#222; font-weight:600; }
+      .block-6 .media{ background:#ffffff; padding:18px; border-radius:14px; min-height:170px; width:100%; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+      .block-6 a.media:hover .media{ box-shadow:0 12px 32px rgba(0,0,0,0.12); }
+      /* Center the grid and force three-per-row on md */
+      .services-row{ display:flex; flex-wrap:wrap; justify-content:center; gap:22px; }
+      .services-item{ flex: 0 0 calc(33.333% - 22px); max-width: calc(33.333% - 22px); }
+      @media(max-width:991px){ .services-item{ flex: 0 0 calc(50% - 18px); max-width: calc(50% - 18px); } }
+      @media(max-width:575px){ .services-item{ flex: 0 0 100%; max-width:100%; } }
+      /* small action buttons styling: single horizontal row on wide screens */
+      .small-actions-row{ display:flex; flex-wrap:nowrap; justify-content:center; gap:32px; margin-top:22px; overflow-x:auto; padding:12px 8px; }
+      .small-actions-item{ flex:0 0 auto; max-width:none; }
+      .small-action .icon i{ width:72px; height:72px; font-size:20px; line-height:72px; border-radius:50%; box-shadow:0 10px 20px rgba(0,0,0,0.12); }
+      .small-action .media{ background:transparent; padding:8px; border-radius:10px; min-height:120px; }
+      @media(max-width:991px){ .small-actions-row{ flex-wrap:wrap; gap:20px; } .small-actions-item{ flex:0 0 calc(50% - 20px); max-width: calc(50% - 20px); } }
+      @media(max-width:575px){ .small-actions-item{ flex:0 0 100%; max-width:100%; } }
+    </style>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Beeone Digital</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="speakers.html" class="nav-link">Speakers</a></li>
+            <li class="nav-item"><a href="schedule.html" class="nav-link">Schedule</a></li>
+            <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+            <li class="nav-item"><a href="team-points.html" class="nav-link">Team Points</a></li>
+            <li class="nav-item active"><a href="admin.html" class="nav-link">Admin</a></li>
+            <li class="nav-item"><a href="#" id="logoutLink" class="nav-link">Logout</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+
+    <section class="ftco-section services-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <span class="subheading">Admin</span>
+            <h2 class="mb-4"><span>Event</span> Control Panel</h2>
+          </div>
+        </div>
+        <div class="services-row">
+          <div class="services-item ftco-animate">
+            <a href="registration.html" class="media block-6 services d-block text-center">
+              <div class="icon"><i class="fa fa-user" style="background: linear-gradient(135deg, #1abc9c, #16a085);"></i></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Registration</h3>
+              </div>
+            </a>
+          </div>
+          <div class="services-item ftco-animate">
+            <a href="calling-list.html" class="media block-6 services d-block text-center">
+              <div class="icon"><i class="fa fa-list" style="background: linear-gradient(135deg, #3498db, #2980b9);"></i></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Calling List</h3>
+              </div>
+            </a>
+          </div>
+          <div class="services-item ftco-animate">
+            <a href="mark-entry.html" class="media block-6 services d-block text-center">
+              <div class="icon"><i class="fa fa-check-circle" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);"></i></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Mark Entry</h3>
+              </div>
+            </a>
+          </div>
+          <div class="services-item ftco-animate">
+            <a href="team-badge.html" class="media block-6 services d-block text-center">
+              <div class="icon"><i class="fa fa-users" style="background: linear-gradient(135deg, #e67e22, #d35400);"></i></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Team, Badge</h3>
+              </div>
+            </a>
+          </div>
+          <div class="services-item ftco-animate">
+            <a href="admin-schedule.html" class="media block-6 services d-block text-center">
+              <div class="icon"><i class="fa fa-clock" style="background: linear-gradient(135deg, #f1c40f, #f39c12);"></i></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Schedule</h3>
+              </div>
+            </a>
+          </div>
+          <div class="services-item ftco-animate">
+            <a href="programs.html" class="media block-6 services d-block text-center">
+              <div class="icon"><i class="fa fa-calendar" style="background: linear-gradient(135deg, #3498db, #2980b9);"></i></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Programs</h3>
+              </div>
+            </a>
+          </div>
+          <div class="services-item ftco-animate">
+            <a href="competitions.html" class="media block-6 services d-block text-center">
+              <div class="icon"><i class="fa fa-star" style="background: linear-gradient(135deg, #f39c12, #d35400);"></i></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Competitions</h3>
+              </div>
+            </a>
+          </div>
+          <div class="services-item ftco-animate">
+            <a href="results.html" class="media block-6 services d-block text-center">
+              <div class="icon"><i class="fa fa-trophy" style="background: linear-gradient(135deg, #2ecc71, #27ae60);"></i></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Results</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- action buttons moved below dashboard; placeholder removed here -->
+
+        <!-- Dark Theme Dashboard Stats -->
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-10">
+            <div style="background:#111218;color:#f5f7fa;padding:18px;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,0.3);">
+              <div class="row text-center">
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div style="font-size:12px;color:#9aa3ad">Participants</div>
+                  <div id="dash-participants" style="font-size:22px;font-weight:700;margin-top:6px">0</div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div style="font-size:12px;color:#9aa3ad">Programs</div>
+                  <div id="dash-programs" style="font-size:22px;font-weight:700;margin-top:6px">0</div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div style="font-size:12px;color:#9aa3ad">Finalised Results</div>
+                  <div id="dash-finalised" style="font-size:22px;font-weight:700;margin-top:6px">0</div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div style="font-size:12px;color:#9aa3ad">Marked Programs</div>
+                  <div id="dash-marked" style="font-size:22px;font-weight:700;margin-top:6px">0</div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div style="font-size:12px;color:#9aa3ad">Teams</div>
+                  <div id="dash-teams" style="font-size:22px;font-weight:700;margin-top:6px">0</div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <div style="font-size:12px;color:#9aa3ad">Categories</div>
+                  <div id="dash-categories" style="font-size:22px;font-weight:700;margin-top:6px">0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Small action buttons below dashboard -->
+        <div class="small-actions-row">
+          <div class="small-actions-item ftco-animate">
+            <a href="backup.html" class="media block-6 services d-block text-center small-action">
+              <div class="icon"><i class="fa fa-sync" style="background: linear-gradient(135deg,#e74c3c,#c0392b);"></i></div>
+              <div class="media-body"><h3 class="heading mb-3">Backup</h3></div>
+            </a>
+          </div>
+          <div class="small-actions-item ftco-animate">
+            <a href="import-online-data.html" class="media block-6 services d-block text-center small-action">
+              <div class="icon"><i class="fa fa-cloud-upload-alt" style="background: linear-gradient(135deg,#2980b9,#1f618d);"></i></div>
+              <div class="media-body"><h3 class="heading mb-3">Import Online</h3></div>
+            </a>
+          </div>
+          <div class="small-actions-item ftco-animate">
+            <a href="export-winners.html" class="media block-6 services d-block text-center small-action">
+              <div class="icon"><i class="fa fa-cloud-download-alt" style="background: linear-gradient(135deg,#16a085,#0e6655);"></i></div>
+              <div class="media-body"><h3 class="heading mb-3">Export Winners</h3></div>
+            </a>
+          </div>
+          <div class="small-actions-item ftco-animate">
+            <a href="certificate.html" class="media block-6 services d-block text-center small-action">
+              <div class="icon"><i class="fa fa-award" style="background: linear-gradient(135deg,#8e44ad,#6c3483);"></i></div>
+              <div class="media-body"><h3 class="heading mb-3">Certificate</h3></div>
+            </a>
+          </div>
+          <div class="small-actions-item ftco-animate">
+            <a href="admin-blog.html" class="media block-6 services d-block text-center small-action">
+              <div class="icon"><i class="fa fa-blog" style="background: linear-gradient(135deg,#1abc9c,#16a085);"></i></div>
+              <div class="media-body"><h3 class="heading mb-3">Blog Admin</h3></div>
+            </a>
+          </div>
+          <div class="small-actions-item ftco-animate">
+            <a href="admin-team-points.html" class="media block-6 services d-block text-center small-action">
+              <div class="icon"><i class="fa fa-table" style="background: linear-gradient(135deg,#2ecc71,#27ae60);"></i></div>
+              <div class="media-body"><h3 class="heading mb-3">Team Points</h3></div>
+            </a>
+          </div>
+          <div class="small-actions-item ftco-animate">
+            <a href="event-title.html" class="media block-6 services d-block text-center small-action">
+              <div class="icon"><i class="fa fa-book" style="background: linear-gradient(135deg,#d35400,#a04000);"></i></div>
+              <div class="media-body"><h3 class="heading mb-3">Event Title</h3></div>
+            </a>
+          </div>
+          <div class="small-actions-item ftco-animate">
+            <a href="#" class="media block-6 services d-block text-center small-action open-login-details">
+              <div class="icon"><i class="fa fa-user-cog" style="background: linear-gradient(135deg,#6c5ce7,#341f97);"></i></div>
+              <div class="media-body"><h3 class="heading mb-3">Login Details</h3></div>
+            </a>
+          </div>
+          <div class="small-actions-item ftco-animate">
+            <a href="#" class="media block-6 services d-block text-center small-action open-edit-speakers">
+              <div class="icon"><i class="fa fa-microphone" style="background: linear-gradient(135deg,#34495e,#2c3e50);"></i></div>
+              <div class="media-body"><h3 class="heading mb-3">Edit Speakers</h3></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Beeone Digital</h2>
+              <p>Manage your event with a single dashboard interface.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Useful Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="registration.html" class="py-2 d-block">Registration</a></li>
+                <li><a href="calling-list.html" class="py-2 d-block">Calling List</a></li>
+                <li><a href="programs.html" class="py-2 d-block">Programs</a></li>
+                <li><a href="competitions.html" class="py-2 d-block">Competitions</a></li>
+                <li><a href="admin-schedule.html" class="py-2 d-block">Schedule</a></li>
+                <li><a href="results.html" class="py-2 d-block">Results</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Admin Actions</h2
+              <ul class="list-unstyled">
+                <li><a href="backup.html" class="py-2 d-block">Backup</a></li>
+                <li><a href="import-online-data.html" class="py-2 d-block">Import Online Data</a></li>
+                <li><a href="export-winners.html" class="py-2 d-block">Export Winners</a></li>
+                <li><a href="certificate.html" class="py-2 d-block">Certificate</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Contact</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by Colorlib</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function(){
+      if(!window.adminAuth || !window.adminAuth.isAuthenticated || !window.adminAuth.isAuthenticated()){
+        window.location.href = 'login.html';
+        return;
+      }
+      var logoutLink = document.getElementById('logoutLink');
+      if(logoutLink){
+        logoutLink.addEventListener('click', function(e){
+          e.preventDefault();
+          window.adminAuth.logout();
+          window.location.href = 'login.html';
+        });
+      }
+    })();
+  </script>
+  <script>
+    (function(){
+      function safeParseArray(key){ try{ var raw=localStorage.getItem(key); var obj = raw?JSON.parse(raw):[]; return Array.isArray(obj)?obj:[]; }catch(e){ return []; } }
+      function safeParseObject(key){ try{ var raw=localStorage.getItem(key); var obj = raw?JSON.parse(raw):{}; return (obj && typeof obj=== 'object')?obj:{}; }catch(e){ return {}; } }
+      function updateDashboardCounts(){
+        var parts = safeParseArray('eventalk_participants');
+        var programs = safeParseArray('eventalk_programs');
+        var teams = safeParseArray('eventalk_teams');
+        var cats = safeParseArray('eventalk_categories');
+        var finals = safeParseObject('eventalk_final_results');
+        var marks = safeParseObject('eventalk_mark_entries');
+        var participantsCount = parts.length || 0;
+        var programsCount = programs.length || 0;
+        var teamsCount = teams.length || 0;
+        var catsCount = cats.length || 0;
+        var finalisedCount = Object.keys(finals).length || 0;
+        var markedProgramsCount = Object.keys(marks).length || 0;
+        var setText = function(id, val){ var el=document.getElementById(id); if(el) el.textContent = val; };
+        setText('dash-participants', participantsCount);
+        setText('dash-programs', programsCount);
+        setText('dash-finalised', finalisedCount);
+        setText('dash-marked', markedProgramsCount);
+        setText('dash-teams', teamsCount);
+        setText('dash-categories', catsCount);
+      }
+      (function(handler){
+        function runIfReady(){
+          var domReady = document.readyState === 'interactive' || document.readyState === 'complete';
+          var hydrated = !!window._localstorageHydrated;
+          if(domReady && hydrated){ handler(); return; }
+          function domHandler(){ domReady = true; if(hydrated){ cleanup(); handler(); } }
+          function hydHandler(){ hydrated = true; if(domReady){ cleanup(); handler(); } }
+          function cleanup(){ document.removeEventListener('DOMContentLoaded', domHandler); window.removeEventListener('localstorage-hydrated', hydHandler); }
+          document.addEventListener('DOMContentLoaded', domHandler);
+          window.addEventListener('localstorage-hydrated', hydHandler);
+        }
+        runIfReady();
+      })(function(){ updateDashboardCounts(); });
+      window.addEventListener('storage', function(){ updateDashboardCounts(); });
+      // expose for manual refresh in console
+      window.updateAdminDashboard = updateDashboardCounts;
+    })();
+  </script>
+  <!-- Login details modal -->
+  <div class="modal fade" id="loginDetailsModal" tabindex="-1" role="dialog" aria-labelledby="loginDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginDetailsModalLabel">Login Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form id="loginDetailsForm">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="loginUsername">Super Admin Username</label>
+              <input id="loginUsername" class="form-control" type="text" value="RASHID313" readonly>
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Super Admin Password</label>
+              <input id="loginPassword" class="form-control" type="password" value="662830" readonly>
+            </div>
+            <div class="alert alert-info" id="loginDetailsInfo" role="alert">Super admin credentials are fixed and cannot be edited or deleted.</div>
+            <hr>
+            <h6>Additional admin users</h6>
+            <div id="loginUsersList" class="list-group mb-3"></div>
+            <div class="form-group">
+              <label for="newUsername">Username</label>
+              <input id="newUsername" class="form-control" type="text" placeholder="Enter new username">
+            </div>
+            <div class="form-group">
+              <label for="newPassword">Password</label>
+              <input id="newPassword" class="form-control" type="password" placeholder="Enter new password">
+            </div>
+            <div class="alert alert-danger d-none" id="loginDetailsError" role="alert"></div>
+            <div class="alert alert-success d-none" id="loginDetailsSuccess" role="alert">User added successfully.</div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Add User</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Speakers editor modal -->
+  <div class="modal fade" id="speakersModal" tabindex="-1" role="dialog" aria-labelledby="speakersModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="speakersModalLabel">Edit Home Speakers</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">Loading editor…</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){
+      function renderLoginUsers(){
+        var list = document.getElementById('loginUsersList');
+        if(!list) return;
+        var users = window.adminAuth.getUsers();
+        list.innerHTML = '';
+        if(!users.length){
+          list.innerHTML = '<div class="text-muted">No additional admin users added.</div>';
+          return;
+        }
+        users.forEach(function(user){
+          var item = document.createElement('div');
+          item.className = 'list-group-item d-flex justify-content-between align-items-center';
+          item.textContent = user.username;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-danger delete-user-button';
+          btn.textContent = 'Delete';
+          btn.dataset.username = user.username;
+          item.appendChild(btn);
+          list.appendChild(item);
+        });
+      }
+
+      function showLoginDetailsModal(){
+        var usernameInput = document.getElementById('loginUsername');
+        var passwordInput = document.getElementById('loginPassword');
+        var newUsernameInput = document.getElementById('newUsername');
+        var newPasswordInput = document.getElementById('newPassword');
+        var err = document.getElementById('loginDetailsError');
+        var success = document.getElementById('loginDetailsSuccess');
+        if(usernameInput){
+          usernameInput.value = window.adminAuth.getSuperAdmin().username;
+        }
+        if(passwordInput){
+          passwordInput.value = window.adminAuth.getSuperAdmin().password;
+        }
+        if(newUsernameInput){ newUsernameInput.value = ''; }
+        if(newPasswordInput){ newPasswordInput.value = ''; }
+        if(err){ err.style.display = 'none'; err.textContent = ''; }
+        if(success){ success.style.display = 'none'; }
+        renderLoginUsers();
+        $('#loginDetailsModal').modal('show');
+      }
+
+      document.addEventListener('click', function(e){
+        var speakerButton = e.target.closest && e.target.closest('.open-edit-speakers');
+        if(speakerButton){
+          e.preventDefault();
+          $('#speakersModal .modal-body').load('edit-home-speakers.html', function(){
+            $('#speakersModal').modal('show');
+          });
+          return;
+        }
+
+        var loginDetailsButton = e.target.closest && e.target.closest('.open-login-details');
+        if(loginDetailsButton){
+          e.preventDefault();
+          showLoginDetailsModal();
+          return;
+        }
+
+        var deleteButton = e.target.closest && e.target.closest('.delete-user-button');
+        if(deleteButton){
+          e.preventDefault();
+          var username = deleteButton.dataset.username;
+          var err = document.getElementById('loginDetailsError');
+          var success = document.getElementById('loginDetailsSuccess');
+          var result = window.adminAuth.deleteUser(username);
+          if(result.success){
+            if(err){ err.style.display = 'none'; }
+            if(success){ success.textContent = 'User removed successfully.'; success.style.display = 'block'; }
+            renderLoginUsers();
+          } else if(err){
+            err.textContent = result.error;
+            err.style.display = 'block';
+            if(success){ success.style.display = 'none'; }
+          }
+        }
+      });
+
+      var form = document.getElementById('loginDetailsForm');
+      if(form){
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          var username = document.getElementById('newUsername').value.trim();
+          var password = document.getElementById('newPassword').value.trim();
+          var err = document.getElementById('loginDetailsError');
+          var success = document.getElementById('loginDetailsSuccess');
+          if(err){ err.style.display = 'none'; }
+          if(success){ success.style.display = 'none'; }
+
+          var result = window.adminAuth.addUser(username, password);
+          if(result.success){
+            if(success){ success.textContent = 'User added successfully.'; success.style.display = 'block'; }
+            if(err){ err.style.display = 'none'; }
+            document.getElementById('newUsername').value = '';
+            document.getElementById('newPassword').value = '';
+            renderLoginUsers();
+          } else if(err){
+            err.textContent = result.error;
+            err.style.display = 'block';
+            if(success){ success.style.display = 'none'; }
+          }
+        });
+      }
+    })();
+  </script>
+    
+  </body>
+</html>
+
+
